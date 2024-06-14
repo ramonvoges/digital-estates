@@ -3,7 +3,7 @@ import pandas as pd
 from datetime import datetime
 import sys
 import requests
-from xml.etree import ElementTree as ET
+from bs4 import BeautifulSoup
 
 def get_file_info(directory_path):
     file_info_list = []
@@ -32,12 +32,10 @@ def get_file_type(file_path):
     with open(file_path, 'rb') as file:
         response = requests.post(url, files={'datafile': file}, verify=False)
     if response.status_code == 200:
-        xml_root = ET.fromstring(response.content)
-        print(xml_root)
-        format_element = xml_root.find('.//identity[@format]')
-        print(format_element)
-        if format_element is not None:
-            return format_element.get('format')
+        soup = BeautifulSoup(response.content, 'lxml-xml')
+        format_element = soup.find('identity', format=True)
+        if format_element:
+            return format_element['format']
     return "Unbekannt"
 
 def create_excel(file_info_list, output_file):
