@@ -9,9 +9,11 @@ def get_file_info(directory_path):
         for i, file in enumerate(files, start=1):
             file_path = os.path.join(root, file)
             file_stats = os.stat(file_path)
+            file_extension = os.path.splitext(file)[1]
             file_info = {
                 "Laufende Nummer": i,
                 "Dateiname": file,
+                "Dateiendung": file_extension,
                 "Dateipfad": file_path,
                 "Änderungsdatum": datetime.fromtimestamp(file_stats.st_mtime).strftime('%Y-%m-%d %H:%M:%S'),
                 "Erstellungsdatum": datetime.fromtimestamp(file_stats.st_ctime).strftime('%Y-%m-%d %H:%M:%S'),
