@@ -1,13 +1,15 @@
 # Digitale Nachlässe
 
-Ein Skript, mit dem sich die Inhalte von Verzeichnisse kartieren lassen. Es erstellt pro Datei eine Zeile in einer Excel-Datei. Jede Zeile gibt Auskunft über Dateiname, Pfad, Datum der letzten Änderung und Erstellung, die Dateigröße und den Dateityp.
+Ein paar Skripte, mit denen sich die Inhalte von Verzeichnisse kartieren und Metadaten gewinnen lassen. `dn.py` erstellt pro Datei eine Zeile in einer Excel-Datei. Jede Zeile gibt Auskunft über Dateiname, Pfad, Datum der letzten Änderung und Erstellung, die Dateigröße und den Dateityp. Die anderen Skripte lassen sich wahlweise einbinden, um Word-Dateien in Text-Dateien umzuwandeln (`word2txt.py`), eine PDF-, Word- oder Text-Datei zusammenzufassen (`summarize.py`) oder eine Bild-Datei zu beschreiben (`summarize_image.py`).
+
+Um explorativ die Daten zu erschließen, kann auch das Jupyter Notebook `Digitale Nachlässe.ipynb` genutzt werden.
 
 ## Voraussetzung
 
 Folgende Python-Bibliotheken müssen installiert sein:
 
 ```shell
-pip3 install pandas openpyxl requests beautifulsoup4 lxml
+pip3 install pandas openpyxl requests beautifulsoup4 lxml docx2txt ollama
 ```
 
 ## Aufruf
