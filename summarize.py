@@ -8,7 +8,7 @@ def summarize_file(file_path):
         file_content = file.read()
         prompt = "Deine Aufgabe ist es, den gegebenen Text in ungefähr 300 Wörtern zusammenzufassen. Gebe nur die Zusammenfassung wieder ohne weitere Angaben."
         response = ollama.chat(
-            model="phi3",
+            model="llama3",
             messages=[
                 {
                     'role': 'user',

@@ -15,3 +15,11 @@ pip3 install pandas openpyxl requests beautifulsoup4 lxml docx2txt ollama
 ## Aufruf
 
 Mit `python dn.py <Verzeichnis> <Dateiname.xlsx>` lässt sich das Skript aufrufen.
+
+## Dateien zusammenfassen
+
+Voraussetzung ist eine lokal laufenden Ollama-Instanz. Ob eine läuft, kann mit `ollama serve` kontrolliert werden.
+
+Wenn auf eine externe Ollama-Instanz zurückgegriffen werden soll, kann mit `export OLLAMA_HOST=<IP-Adresse:Port>` die externe Adresse angegeben werden.
+
+Das Skrippt lässt sich auch über das Terminal mit `python summarize.py <Text-Datei>` aufrufen.
