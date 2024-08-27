@@ -42,11 +42,6 @@ def create_excel(file_info_list, output_file):
     df = pd.DataFrame(file_info_list)
     df.to_excel(output_file, index=False)
 
-def main(directory_path, output_file):
-    file_info_list = get_file_info(directory_path)
-    create_excel(file_info_list, output_file)
-    print(f"Excel-Datei '{output_file}' wurde erfolgreich erstellt.")
-
 if __name__ == "__main__":
     if len(sys.argv) != 3:
         print("Usage: python file_list_generator.py <directory_path> <output_file>")
@@ -54,5 +49,6 @@ if __name__ == "__main__":
     
     directory_path = sys.argv[1]
     output_file = sys.argv[2]
-    main(directory_path, output_file)
-
+    file_info_list = get_file_info(directory_path)
+    create_excel(file_info_list, output_file)
+    print(f"Excel-Datei '{output_file}' wurde erfolgreich erstellt.")
